@@ -1,13 +1,12 @@
 import execjs
 import execjs.runtime_names
+import os
+import codecs
 from Naked.toolshed.shell import execute_js, muterun_js
-f = open('rsa2.js', 'r',encoding = "utf-8" )
-js = f.read()
-f.close()
-ctx = execjs.compile(js)
-
-jscript = execjs.get()
-jscript.compile(js)
-jscript.compile("rsa = RSAKey();")
+f = codecs.open('rsa4.js','r','utf-8').read()
+myjs = execjs.get()
+compjs = myjs.compile(f)
+#print(compjs.call("RSASetPublic"))
+print(compjs.call("a","1"))
 #a.call("rsa")
 #ctx.("rsa")

@@ -24,7 +24,6 @@ if ("220" in ans):
         r = smtpserver.docmd("RCPT TO:",Y)
         a = str(r)
         if ("250" in a):
-            
             print("[+]The target system seems vulenarble to Open relay attack")
 
         else:
